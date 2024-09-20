@@ -2,12 +2,8 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <meta name="description" content="Praca z WIAI Technikumpolna.pl - Konrad Olejnik i Bartosz Serafin">
-    <title>
-        Najdroższe Auta Świata
-    </title>
+    <title>Elitarne Auta</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -35,35 +31,39 @@
 
         section {
             background-color: #f7f3f3;
-            margin-bottom: 20px;
+            margin-bottom: 20px; /* Odstęp poniżej sekcji */
             padding: 20px;
             border-radius: 8px;
         }
 
         h2 {
             color: #363636;
-            margin-top: 0;
+            margin-top: 0; /* Brak górnego marginesu */
         }
 
+        /* Styl dla paragrafów */
         p {
             color: #696868;
         }
 
+        /* Styl dla listy nieuporządkowanej */
         ul {
-            list-style-type: none;
+            list-style-type: none; /* Brak standardowych punktów listy */
             padding: 0;
         }
 
         li {
             padding: 10px 0;
-            display: flex;
-            align-items: center;
+            display: flex; /* Ustawienie elementów w jednej linii */
+            align-items: center; /* Wyrównanie elementów do środka w pionie */
         }
 
+        /* Usunięcie dolnej granicy dla ostatniego elementu listy */
         li:last-child {
             border-bottom: none;
         }
 
+        /* Styl dla obrazków */
         img {
             width: 150px;
             height: auto;
@@ -96,31 +96,9 @@
             font-size: 1em;
         }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            text-align: center;
-            background-color: #312f2f;
-            margin: 0;
-        }
-
-        nav ul li {
-            display: inline-block;
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-        
         .gallery {
-            display: flex;
-            flex-wrap: wrap;
+            display: flex; /* Ustawienie elementów galerii w jednej linii */
+            flex-wrap: wrap; /* Automatyczne łamanie linii, gdy brakuje miejsca */
             justify-content: space-around;
             gap: 20px;
         }
@@ -128,31 +106,26 @@
         .gallery img {
             width: 450px;
             height: 150px;
-            object-fit: cover;
+            object-fit: cover; /* Dopasowanie obrazka do rozmiaru */
             border-radius: 8px;
         }
-
 
         .social img {
             width: 30px;
             margin: 0 10px;
             padding: 20px;
-            
         }
 
     </style>
 </head>
 <body>
     <header>
-        <h1>
-            Najdroższe Auta Świata
-        </h1>
+        <h1>Najdroższe Auta Świata</h1>
     </header>
+
     <main>
         <section>
-            <h2>
-                Wprowadzenie
-            </h2>
+            <h2>Wprowadzenie</h2>
             <p>Oto lista najdroższych samochodów na świecie, które zachwycają zarówno swoją ceną, jak i wyjątkowym designem oraz osiągami.<br> Te luksusowe pojazdy to symbol prestiżu i bogactwa, dostępne tylko dla nielicznych.</p>
         </section>
         
@@ -173,55 +146,54 @@
                 </li>
                 <li>
                     <img src="Rolls-Royce Sweptail.jfif" alt="Rolls-Royce Sweptail">
-                    <div>
-                        <strong><a href="Rolls-Royce_Sweptail.html">Rolls-Royce Sweptail</a></strong> - $13 milionów
-                    </div>
-                </li>
-                <li>
-                    <img src="Bugatti Centodieci.jpeg" alt="Bugatti Centodieci">
-                    <div>
-                        <strong><a href="Bugatti_Centodieci.html">Bugatti Centodieci</a></strong> - $9 milionów
-                    </div>
-                </li>
-                <li>
-                    <img src="Mercedes-Maybach Exelero.webp" alt="Mercedes-Maybach Exelero">
-                    <div>
-                        <strong><a href="Mercedes-Maybach_Exelero.html">Mercedes-Maybach Exelero</a></strong> - $8 milionów
-                    </div>
-                </li>
-            </ul>
-        </section>
-              
-        <section>
-            <h2>Podsumowanie</h2>
-            <p>Każdy z tych samochodów to dzieło sztuki motoryzacyjnej, które łączy w sobie najnowsze technologie, luksus i wyjątkowy design.<br>Posiadanie jednego z tych pojazdów to marzenie każdego miłośnika motoryzacji.</p>
-        </section>
-        <section>
-            <h2>Galeria</h2>
-            <div class="gallery">
-                <a href="bugatti-la-voiture-noire.webp" target="_blank">
-                    <img src="bugatti-la-voiture-noire.webp" alt="Bugatti La Voiture Noire">
-                </a>
-                <a href="galeria1.webp" target="_blank">
-                    <img src="galeria1.webp" alt="Bugatti La Voiture Noire">
-                </a>
-                <a href="galeria2.webp" target="_blank">
-                    <img src="galeria2.webp" alt="Bugatti La Voiture Noire">
-                </a>
-                <a href="galeria3.webp" target="_blank">
-                    <img src="galeria3.webp" alt="Bugatti La Voiture Noire">
-                </a>
-                <a href="galeria4.webp" target="_blank">
-                <img src="galeria4.webp" alt="Bugatti La Voiture Noire">
-                </a>
-                <a href="galeria5.webp" target="_blank">
-                <img src="galeria5.webp" alt="Bugatti La Voiture Noire">
-                </a>
-            </div>
-        </section>   
-        <footer>
-            <h3>©Copyright 2024 - Technikum Polna. All Rights Reserved. Created by Konrad Olejnik & Bartosz Serafin</h3>
-        </footer>
-    </main>
+                    <strong><a href="Rolls-Royce_Sweptail.html">Rolls-Royce Sweptail</a></strong> - $13 milionów
+                </div>
+            </li>
+            <li>
+                <img src="Bugatti Centodieci.jpeg" alt="Bugatti Centodieci">
+                <div>
+                    <strong><a href="Bugatti_Centodieci.html">Bugatti Centodieci</a></strong> - $9 milionów
+                </div>
+            </li>
+            <li>
+                <img src="Mercedes-Maybach Exelero.webp" alt="Mercedes-Maybach Exelero">
+                <div>
+                    <strong><a href="Mercedes-Maybach_Exelero.html">Mercedes-Maybach Exelero</a></strong> - $8 milionów
+                </div>
+            </li>
+        </ul>
+    </section>
+          
+    <section>
+        <h2>Podsumowanie</h2>
+        <p>Każdy z tych samochodów to dzieło sztuki motoryzacyjnej, które łączy w sobie najnowsze technologie, luksus i wyjątkowy design.<br>Posiadanie jednego z tych pojazdów to marzenie każdego miłośnika motoryzacji.</p>
+    </section>
+    <section>
+        <h2>Galeria</h2>
+        <div class="gallery">
+            <a href="bugatti-la-voiture-noire.webp" target="_blank">
+                <img src="bugatti-la-voiture-noire.webp" alt="Bugatti La Voiture Noire">
+            </a>
+            <a href="galeria1.webp" target="_blank">
+                <img src="galeria1.webp" alt="Bugatti La Voiture Noire">
+            </a>
+            <a href="galeria2.webp" target="_blank">
+                <img src="galeria2.webp" alt="Bugatti La Voiture Noire">
+            </a>
+            <a href="galeria3.webp" target="_blank">
+                <img src="galeria3.webp" alt="Bugatti La Voiture Noire">
+            </a>
+            <a href="galeria4.webp" target="_blank">
+            <img src="galeria4.webp" alt="Bugatti La Voiture Noire">
+            </a>
+            <a href="galeria5.webp" target="_blank">
+            <img src="galeria5.webp" alt="Bugatti La Voiture Noire">
+            </a>
+        </div>
+    </section>   
+    <footer>
+        <h3>©Copyright 2024 - Technikum Polna. All Rights Reserved. Created by Konrad Olejnik & Bartosz Serafin</h3>
+    </footer>
+</main>
 </body>
 </html>
