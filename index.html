@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Praca z WIAI Technikumpolna.pl - Konrad Olejnik i Bartosz Serafin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elitarne Auta</title>
+    <link rel="stylesheet" href="loader.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header {
+            background-color: #312f2f;
+            color: #fffdfd;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section {
+            background-color: #f7f3f3;
+            margin-bottom: 20px; /* Odstęp poniżej sekcji */
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #363636;
+            margin-top: 0; /* Brak górnego marginesu */
+        }
+
+        /* Styl dla paragrafów */
+        p {
+            color: #696868;
+        }
+
+        /* Styl dla listy nieuporządkowanej */
+        ul {
+            list-style-type: none; /* Brak standardowych punktów listy */
+            padding: 0;
+        }
+
+        li {
+            padding: 10px 0;
+            display: flex; /* Ustawienie elementów w jednej linii */
+            align-items: center; /* Wyrównanie elementów do środka w pionie */
+        }
+
+        /* Usunięcie dolnej granicy dla ostatniego elementu listy */
+        li:last-child {
+            border-bottom: none;
+        }
+
+        /* Styl dla obrazków */
+        img {
+            width: 150px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 8px;
+        }
+
+        strong {
+            font-size: 1.2em;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #312f2f;
+            color: #fffdfd;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer h3 {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 450px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .social img {
+            width: 30px;
+            margin: 0 10px;
+            padding: 20px;
+        }
+
+        .gallery img.active {
+            border: 1px solid #808080;
+            transform: scale(1.1);
+        }
+
+        .carousel-container {
+            overflow: hidden;
+            width: 80%;
+            margin: 0 auto;
+            background-color: #f5f4f4;
+            padding: 20px;  
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .carousel-container.dark-mode {
+            background-color: #2a2a2a;
+        }
+
+        .carousel {
+            display: flex;
+            gap: 10px;
+            animation: scrollCarousel 25s linear infinite;
+        }
+
+        .carousel img {
+            width: 300px;
+            height: 200px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        @keyframes scrollCarousel {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-300px * 5 - 50px));
+            }
+        }
+
+        li img:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        body.dark-mode {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .price {
+            color: #ffffff;
+        }
+
+        body.dark-mode section ul li div {
+            color: #ffffff;
+        }
+
+        body.dark-mode section ul li div a {
+            color: #ffffff;
+        }
+
+        body.dark-mode section ul li strong {
+            color: #ffffff;
+        }
+
+        header.dark-mode, footer.dark-mode {
+            background-color: #2c2c2c;
+        }
+
+        section.dark-mode {
+            background-color: #333333;
+            color: #ffffff;
+        }
+
+        section.dark-mode ul li {
+            color: #070707;
+        }   
+
+        section.dark-mode ul li a {
+            color: #ffffff;
+        }
+
+        section.dark-mode ul li a:hover {
+            color: #ffffff;
+        }
+
+        .dark-mode h1, .dark-mode h2 {
+            color: #f5f4f4;
+        }
+
+        #toggle-mode {
+            background-color: #1e90ff;
+            color: #ffffff;
+            border: none;
+            padding: 8px 10px;
+            font-size: 1rem;
+            font-family: Arial, sans-serif;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease, top 0.3s ease;
+            margin-right: 10px;
+            margin-top: 50px;
+            position: fixed;
+            top: 60px;
+            right: 10px;
+            z-index: 1000;
+        }
+
+        #toggle-mode:hover {
+            background-color: #6495ed;
+            transform: scale(0.9);
+        }
+
+        #toggle-mode:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        
+
+        body.light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        body.dark-mode p {
+            color: #ffffff;
+        }
+
+        body.dark-mode .carousel-container {
+            background-color: #333333;
+        }
+
+
+</style>
+
+    </style>
+</head>
+<body>
+    <!-- Animacja -->
+    <div id="preloader">
+        <div id="loading-text">
+            Ładowanie strony<span id="dots">...</span>
+        </div>
+
+        <div id="road-container">
+            <div id="road">
+                <pre>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|                                            |
+|                                            |
+|                                            |
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                </pre>
+                <pre id="ascii-car">
+     ______
+   _|_o_o_o\__
+  |   _     _ `.  
+  '-(_)---(_)--'
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- Treść strony -->
+    <header>
+        <h1>Najdroższe Auta</h1><small><a href="index.html" style="color: rgb(255, 255, 255);" >/elitarneauta.pl</a></small>
+        <button id="toggle-mode">🌙 Zmień na tryb jasny</button>
+
+    </header>
+
+    <main>
+        <section>
+            <h2>Wprowadzenie</h2>
+            <p>Oto lista najdroższych samochodów na świecie, które zachwycają zarówno swoją ceną, jak i wyjątkowym designem oraz osiągami.<br> Te luksusowe pojazdy to symbol prestiżu i bogactwa, dostępne tylko dla nielicznych.</p>
+        </section>
+        
+        <section>
+            <h2>Lista jednych z najdroższych samochodów świata</h2>
+            <ul>
+                <li>
+                    <img src="bugatti-la-voiture-noire.webp" alt="Bugatti La Voiture Noire">
+                    <div>
+                        <strong><a href="Bugatti_La_Voiture_Noire.html">Bugatti La Voiture Noire</a></strong> - <span class="price">$18,7 milionów</span>
+                    </div>
+                </li>
+                <li>
+                    <img src="Pagani Zonda HP Barchetta.jfif" alt="Pagani Zonda HP Barchetta">
+                    <div>
+                        <strong><a href="Pagani_Zonda_HP_Barchetta.html">Pagani Zonda HP Barchetta</a></strong> - <span class="price">$17,5 milionów</span>
+                    </div>
+                </li>
+                <li>
+                    <img src="Rolls-Royce Sweptail.jfif" alt="Rolls-Royce Sweptail">
+                    <div>
+                        <strong><a href="Rolls-Royce_Sweptail.html">Rolls-Royce Sweptail</a></strong> - <span class="price">$13 milionów</span>
+                    </div>
+                </li>
+                <li>
+                    <img src="Bugatti Centodieci.jpeg" alt="Bugatti Centodieci">
+                    <div>
+                        <strong><a href="Bugatti_Centodieci.html">Bugatti Centodieci</a></strong> - <span class="price">$9 milionów</span>
+                    </div>
+                </li>
+                <li>
+                    <img src="Mercedes-Maybach Exelero.webp" alt="Mercedes-Maybach Exelero">
+                    <div>
+                        <strong><a href="Mercedes-Maybach_Exelero.html">Mercedes-Maybach Exelero</a></strong> - <span class="price">$8 milionów</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    <section>
+        <h2>Podsumowanie</h2>
+        <p>Każdy z tych samochodów to dzieło sztuki motoryzacyjnej, które łączy w sobie najnowsze technologie, luksus i wyjątkowy design.<br>Posiadanie jednego z tych pojazdów to marzenie każdego miłośnika motoryzacji.</p>
+    </section>
+
+    <section>
+        <h2>Galeria</h2>
+        <div class="carousel-container">
+            <div class="carousel">
+                <img src="galeria1.webp" alt="Galeria 1">
+                <img src="galeria2.webp" alt="Galeria 2">
+                <img src="galeria3.webp" alt="Galeria 3">
+                <img src="galeria4.webp" alt="Galeria 4">
+                <img src="galeria5.webp" alt="Galeria 5">
+                <img src="galeria1.webp" alt="Galeria 1">
+                <img src="galeria2.webp" alt="Galeria 2">
+                <img src="galeria3.webp" alt="Galeria 3">
+                <img src="galeria4.webp" alt="Galeria 4">
+                <img src="galeria5.webp" alt="Galeria 5">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h3>©Copyright 2024 - Technikum Polna. All Rights Reserved. Created by Konrad Olejnik & Bartosz Serafin</h3>
+    </footer>
+
+    <script src="loader.js"></script>
+    <script>
+        const toggleButton = document.getElementById('toggle-mode');
+            toggleButton.addEventListener('click', () => {
+            if (document.body.classList.contains('dark-mode')) {
+                document.body.classList.remove('dark-mode');
+                const sections = document.querySelectorAll('section');
+                sections.forEach(section => section.classList.remove('dark-mode'));
+                toggleButton.textContent = '🌙 Zmień na tryb ciemny';
+            } else {
+                document.body.classList.add('dark-mode');
+                const sections = document.querySelectorAll('section');
+                sections.forEach(section => section.classList.add('dark-mode'));
+                toggleButton.textContent = '🌞 Zmień na tryb jasny';
+            }
+        });
+
+        window.addEventListener('scroll', function() {
+            var button = document.getElementById('toggle-mode');
+            if (window.scrollY > 70) {
+                button.style.top = '-20px';
+            } else {
+                button.style.top = '60px';
+            }
+        });
+        
+    </script>
+</main>
+</body>
+</html>
